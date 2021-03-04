@@ -22,3 +22,83 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+input, select {
+  background: #3C3F54;
+  color: #B4B5BD;
+  font-weight: 700;
+  padding: 1.1rem;
+  border-style: none;
+  border-radius: 10px;
+  outline: none;
+  margin-left: -20px;
+}
+
+.input1 {
+  width: 100%;
+}
+
+.input2 {
+  width: 108%;
+}
+
+.formRow {
+  display: flex;
+}
+
+.submitBtn {
+  background: #7946C1;
+  color: white;
+  border-radius: 12px;
+  height: 45px;
+  font-size: 18px;
+  border-style: none;
+  outline: none;
+  width: 150px;
+  cursor: pointer;
+  margin: 15px 0 0 -10px;
+  &:hover, &:focus {
+    background: #582D94;
+    outline: none;
+  }
+}
+
+.widgetGroup {
+  display: flex;
+  & > div {
+    margin: 40px 20px;
+  }
+}
+
+.widget {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  cursor: pointer;
+  border-style: none;
+  outline: none;
+  &:focus {
+    outline: none;
+    height: 120px;
+    width: 120px;
+    box-shadow: none !important;
+    transition: height 0.8s ease-out, width 0.8s ease-out;
+  }
+}
+
+.widget1 {
+  background: #f935a9;
+  &:hover {
+    background: #af3e81;
+  }
+}
+
+.widget2 {
+  background: #30bbb5;
+  &:hover {
+    background: #238e8a;
+  }
+}
