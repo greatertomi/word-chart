@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import {
   Bar,
   BarChart,
@@ -8,56 +10,12 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { ChartContext } from "./ChartContext";
+import { ImFilesEmpty } from "react-icons/im";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
-const TableChart = () => {
-  return (
-    <div className="tableChart">
-      Table Chart
+const displayComponent = (showChart, data) => {
+  if (showChart) {
+    return (
       <BarChart
         width={700}
         height={500}
@@ -65,12 +23,48 @@ const TableChart = () => {
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="word" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
+        <Bar dataKey="value" fill="#8884d8" />
       </BarChart>
+    );
+  } else {
+    return (
+      <table>
+        <thead>
+          <tr>
+            <td>Word</td>
+            <td>Length</td>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(({ word, value }) => (
+            <tr key={uuidv4()}>
+              <td>{word}</td>
+              <td>{value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+};
+
+const TableChart = () => {
+  const [showChart, , data] = useContext(ChartContext);
+  return (
+    <div className="tableChart">
+      Table/Chart Display
+      {data.length > 0 ? (
+        displayComponent(showChart, data)
+      ) : (
+        <div className="emptyDiv">
+          <ImFilesEmpty size={80} />
+          <div className="mt-1">No data to show yet</div>
+        </div>
+      )}
     </div>
   );
 };

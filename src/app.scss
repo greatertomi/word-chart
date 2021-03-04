@@ -16,16 +16,25 @@ body {
   width: 50vw;
   background: #f7f7ff;
   color: #262a41;
-  padding: 30px 40px;
+  padding: 10px 40px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  & > * {
+    margin-bottom: 50px;
+  }
 }
 
-input, select {
-  background: #3C3F54;
-  color: #B4B5BD;
+table {
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+
+input,
+select {
+  background: #3c3f54;
+  color: #b4b5bd;
   font-weight: 700;
   padding: 1.1rem;
   border-style: none;
@@ -47,7 +56,7 @@ input, select {
 }
 
 .submitBtn {
-  background: #7946C1;
+  background: #7946c1;
   color: white;
   border-radius: 12px;
   height: 45px;
@@ -57,8 +66,9 @@ input, select {
   width: 150px;
   cursor: pointer;
   margin: 15px 0 0 -10px;
-  &:hover, &:focus {
-    background: #582D94;
+  &:hover,
+  &:focus {
+    background: #582d94;
     outline: none;
   }
 }
@@ -101,4 +111,16 @@ input, select {
   &:hover {
     background: #238e8a;
   }
+}
+
+thead {
+  font-weight: bold;
+}
+
+.emptyDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
