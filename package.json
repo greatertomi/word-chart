@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.1.10",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
@@ -38,5 +38,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "i": "^0.3.6",
+    "jest-dom": "^4.0.0",
+    "npm": "^7.6.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-render": "^1.1.2"
   }
 }
