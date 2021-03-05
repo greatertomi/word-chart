@@ -6,6 +6,7 @@ export const ChartProvider = (props) => {
   const [showChart, setShowChart] = useState(true);
   const [data, setData] = useState([]);
 
+  // This function generate the data for the chart and table
   const generateChartData = (formData) => {
     let { word, caseType, ngrams, length } = formData;
     if (!length) {
@@ -18,10 +19,10 @@ export const ChartProvider = (props) => {
 
     const wordObject = wordCalculator(word, caseType, ngrams, length);
     const result = convertObjToArr(wordObject);
-    console.log(result);
     setData(result);
   };
 
+  // This function creates an object of word:occurrence from the text received
   const wordCalculator = (body, caseSensitive, ngrams, length) => {
     body = body.replace(/\s/g, "");
     const wordLen = body.length;
@@ -47,6 +48,7 @@ export const ChartProvider = (props) => {
     return occurence;
   };
 
+  // This function converts object to array
   const convertObjToArr = (obj) => {
     const arr = [];
     for (const val in obj) {

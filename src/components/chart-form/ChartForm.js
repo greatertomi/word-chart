@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AiOutlineBarChart, AiOutlineTable } from "react-icons/ai";
-import { ChartContext } from "./ChartContext";
+import { ChartContext } from "../../ChartContext";
 
 const focusStyle = {
   outline: "none",

@@ -1,13 +1,18 @@
 import React from "react";
 import "./app.scss";
 import "./utilities.scss";
-import Button from "./components/button/Button";
+import TableChart from "./components/table-chart/TableChart";
+import ChartForm from "./components/chart-form/ChartForm";
+import { ChartProvider } from "./ChartContext";
 
 function App() {
   return (
-    <div>
-      <Button label="please click me" className="button-style" />
-    </div>
+    <ChartProvider>
+      <div className="app">
+        <ChartForm />
+        <TableChart />
+      </div>
+    </ChartProvider>
   );
 }
 

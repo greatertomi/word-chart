@@ -10,7 +10,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { ChartContext } from "./ChartContext";
+import { ChartContext } from "../../ChartContext";
 import { ImFilesEmpty } from "react-icons/im";
 
 const displayComponent = (showChart, data) => {
