@@ -9,6 +9,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 30px 40px;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .tableChart {
@@ -23,6 +26,10 @@ body {
   justify-content: space-between;
   & > * {
     margin-bottom: 50px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 5px 2px;
+    width: 100%;
   }
 }
 
@@ -51,8 +58,24 @@ select {
   width: 108%;
 }
 
+@media only screen and (max-width: 768px) {
+  .formDiv {
+    padding-left: 4px;
+  }
+}
+
 .formRow {
   display: flex;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+
+    input {
+      width: 90%;
+    }
+    div:nth-child(2) {
+      margin-top: 15px;
+    }
+  }
 }
 
 .submitBtn {

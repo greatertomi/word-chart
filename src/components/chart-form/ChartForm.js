@@ -37,45 +37,47 @@ const ChartForm = () => {
   return (
     <div>
       <h3>Create Chart from words</h3>
-      <div>
-        <input
-          type="text"
-          name="word"
-          className="input1"
-          placeholder="body"
-          onChange={onChange}
-          value={word}
-        />
-      </div>
-      <div className="my-2">
-        <select
-          className="input2"
-          name="caseType"
-          onChange={onChange}
-          value={caseType}
-        >
-          <option value="cs">Case Sensitive</option>
-          <option value="ncs">Not case Sensitive</option>
-        </select>
-      </div>
-      <div className="formRow">
-        <div className="mr-4">
-          <input
-            type="text"
-            placeholder="ngrams"
-            name="ngrams"
-            onChange={onChange}
-            value={ngrams}
-          />
-        </div>
+      <div className="formDiv">
         <div>
           <input
             type="text"
-            placeholder="length"
-            name="length"
+            name="word"
+            className="input1"
+            placeholder="body"
             onChange={onChange}
-            value={length}
+            value={word}
           />
+        </div>
+        <div className="my-2">
+          <select
+            className="input2"
+            name="caseType"
+            onChange={onChange}
+            value={caseType}
+          >
+            <option value="cs">Case Sensitive</option>
+            <option value="ncs">Not case Sensitive</option>
+          </select>
+        </div>
+        <div className="formRow">
+          <div className="mr-4">
+            <input
+              type="text"
+              placeholder="ngrams"
+              name="ngrams"
+              onChange={onChange}
+              value={ngrams}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="length"
+              name="length"
+              onChange={onChange}
+              value={length}
+            />
+          </div>
         </div>
       </div>
       <button className="submitBtn" onClick={submitForm}>
