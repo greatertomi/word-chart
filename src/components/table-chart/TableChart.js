@@ -9,6 +9,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
+  ResponsiveContainer,
 } from "recharts";
 import { ChartContext } from "../../ChartContext";
 import { ImFilesEmpty } from "react-icons/im";
@@ -16,19 +17,21 @@ import { ImFilesEmpty } from "react-icons/im";
 const displayComponent = (showChart, data) => {
   if (showChart) {
     return (
-      <BarChart
-        width={700}
-        height={500}
-        data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="word" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="value" fill="#8884d8" />
-      </BarChart>
+      <ResponsiveContainer>
+        <BarChart
+          width={700}
+          height={500}
+          data={data}
+          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="word" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#8884d8" />
+        </BarChart>
+      </ResponsiveContainer>
     );
   } else {
     return (

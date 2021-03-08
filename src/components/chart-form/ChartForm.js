@@ -35,7 +35,7 @@ const ChartForm = () => {
 
   const { word, caseType, ngrams, length } = formData;
   return (
-    <div>
+    <div className="chartForm">
       <h3>Create Chart from words</h3>
       <div className="formDiv">
         <div>
